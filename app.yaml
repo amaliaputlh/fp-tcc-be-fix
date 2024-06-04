@@ -1,0 +1,17 @@
+runtime: nodejs20
+
+env_variables:
+  DB_HOST: '35.223.44.193'
+  DB_USER: 'root'
+  DB_PASSWORD: '109113'
+  DB_NAME: 'db-prak-tcc'
+
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  min_instances: 1
+  max_instances: 5
+
+handlers:
+  - url: /.*
+    secure: always
+    script: auto
