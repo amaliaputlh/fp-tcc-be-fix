@@ -75,7 +75,7 @@ router.post('/login', (req, res) => {
       }
   
       // Jika autentikasi berhasil, buat token JWT
-      const token = jwt.sign({ id: user.id, username: user.username }, process.env.JWT_SECRET, { expiresIn: '1h' });
+      const token = jwt.sign({ id: user.id, username: user.username }, process.env.JWT_SECRET);
       
       // Kirim token sebagai respon
       res.send({ token });
